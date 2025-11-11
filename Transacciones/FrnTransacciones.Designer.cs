@@ -52,6 +52,13 @@
             this.txtFechaAlta = new System.Windows.Forms.TextBox();
             this.lblFechaAlta = new System.Windows.Forms.Label();
             this.btnDescontinuar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo_Barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -82,7 +89,7 @@
             this.txtCodigo_Barras.Name = "txtCodigo_Barras";
             this.txtCodigo_Barras.Size = new System.Drawing.Size(261, 22);
             this.txtCodigo_Barras.TabIndex = 2;
-            //this.txtCodigo_Barras.TextChanged += new System.EventHandler(this.txtCodigo_Barras_TextChanged);
+            this.txtCodigo_Barras.TextChanged += new System.EventHandler(this.txtCodigo_Barras_TextChanged);
             this.txtCodigo_Barras.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodigo_Barras_KeyUp);
             // 
             // txtClave
@@ -276,11 +283,64 @@
             this.btnDescontinuar.UseVisualStyleBackColor = true;
             this.btnDescontinuar.Click += new System.EventHandler(this.btnDescontinuar_Click_1);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Clave,
+            this.Codigo_Barras,
+            this.Nombre,
+            this.Descripcion,
+            this.Categoria});
+            this.dataGridView1.Location = new System.Drawing.Point(539, 78);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(914, 150);
+            this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Clave
+            // 
+            this.Clave.HeaderText = "Clave";
+            this.Clave.MinimumWidth = 6;
+            this.Clave.Name = "Clave";
+            this.Clave.Width = 125;
+            // 
+            // Codigo_Barras
+            // 
+            this.Codigo_Barras.HeaderText = "Codigo_Barras";
+            this.Codigo_Barras.MinimumWidth = 6;
+            this.Codigo_Barras.Name = "Codigo_Barras";
+            this.Codigo_Barras.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Width = 125;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.Width = 125;
+            // 
             // FrnTransacciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1459, 554);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDescontinuar);
             this.Controls.Add(this.txtFechaAlta);
             this.Controls.Add(this.lblFechaAlta);
@@ -309,6 +369,7 @@
             this.Name = "FrnTransacciones";
             this.Text = "FnrTransacciones";
             this.Load += new System.EventHandler(this.FrnTransacciones_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,6 +401,12 @@
         private System.Windows.Forms.TextBox txtFechaAlta;
         private System.Windows.Forms.Label lblFechaAlta;
         private System.Windows.Forms.Button btnDescontinuar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_Barras;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
     }
 }
 
