@@ -8,7 +8,7 @@ namespace Transacciones
     public partial class FrnTransacciones : Form
     {
         clsDaoProductos dao = new clsDaoProductos();
-        List<string> codigosBuscados = new List<string>(); // Lista para guardar los códigos de los productos buscados
+        List<string> codigosBuscados = new List<string>(); 
 
         public FrnTransacciones()
         {
@@ -17,7 +17,7 @@ namespace Transacciones
 
         private void FrnTransacciones_Load(object sender, EventArgs e)
         {
-            // Configurar columnas del DataGridView
+           
             dataGridView1.Columns.Clear();
             dataGridView1.Columns.Add("Codigo", "Código de Barras");
             dataGridView1.Columns.Add("Nombre", "Nombre");
@@ -26,7 +26,7 @@ namespace Transacciones
             dataGridView1.Columns.Add("Existencia", "Existencia");
             dataGridView1.Columns.Add("Descontinuado", "Descontinuado");
 
-            // Limpia los campos
+            
             LimpiarCampos();
         }
 
@@ -45,9 +45,6 @@ namespace Transacciones
             txtFechaAlta.Clear();
         }
 
-        // ==========================
-        // BOTÓN BUSCAR PRODUCTO
-        // ==========================
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             string codigo = txtCodigo_Barras.Text.Trim();
@@ -66,7 +63,7 @@ namespace Transacciones
                 {
                     DataRow fila = dt.Rows[0];
 
-                    // Mostrar datos en los TextBox
+                   
                     txtClave.Text = fila["Id"].ToString();
                     txtCodigo_b.Text = fila["Codigo_Barras"].ToString();
                     txtNombre.Text = fila["Nombre"].ToString();
@@ -78,7 +75,7 @@ namespace Transacciones
                     txtDescontinuado.Text = (Convert.ToBoolean(fila["Descontinuado"])) ? "Sí" : "No";
                     txtFechaAlta.Text = Convert.ToDateTime(fila["FechaIngreso"]).ToString("dd/MM/yyyy");
 
-                    // Agregar producto al DataGridView si no está repetido
+                  
                     if (!codigosBuscados.Contains(codigo))
                     {
                         dataGridView1.Rows.Add(
@@ -108,9 +105,7 @@ namespace Transacciones
             }
         }
 
-        // ==========================
-        // BOTÓN DESCONTINUAR TODOS
-        // ==========================
+
         private void btnDescontinuar_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count == 0)
@@ -159,9 +154,7 @@ namespace Transacciones
             }
         }
 
-        // ==========================
-        // CLICK EN UNA FILA DEL GRID
-        // ==========================
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -177,9 +170,7 @@ namespace Transacciones
             }
         }
 
-        // ==========================
-        // ENTER PARA BUSCAR
-        // ==========================
+
         private void txtCodigo_Barras_KeyUp(object sender, KeyEventArgs e)
         {
             if ((int)e.KeyCode == (int)Keys.Enter)
@@ -190,12 +181,10 @@ namespace Transacciones
             }
         }
 
-        // ==========================
-        // NO USADO (puede dejarse vacío)
-        // ==========================
+
         private void txtCodigo_Barras_TextChanged(object sender, EventArgs e)
         {
-            // No hace nada, pero puedes usarlo si deseas filtrar mientras se escribe
+            
         }
     }
 }
